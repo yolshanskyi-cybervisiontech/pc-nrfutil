@@ -199,8 +199,8 @@ class DFUAdapter(BLEDriverObserver, BLEAdapterObserver):
             self.bond()
         else:
             logger.info("Un-bonded Buttonless characteristic discovered -> Increment target device addr")
-            self.target_device_addr = "{:X}".format(int(self.target_device_addr, 16) + 1)
-            self.target_device_addr_type.addr[-1] += 1
+            # self.target_device_addr = "{:X}".format(int(self.target_device_addr, 16) + 1)
+            # self.target_device_addr_type.addr[-1] += 1
 
         # Enable indication for Buttonless DFU Service
         self.adapter.enable_indication(self.conn_handle, buttonless_uuid)
